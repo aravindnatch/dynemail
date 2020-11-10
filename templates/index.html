@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic Email</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
+</head>
+
+<body>
+  {% if p[0] != 1 %}
+  <div id="welcome-user" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content welcome-box">
+        <div class="modal-header bb-0">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body welcome-box-body">
+          <h4 class="modal-title">Welcome to Dynamic Email!</h4>
+          <p>This application allows you to change the content of your emails!<br><br>
+             <b>How it Works:</b><br>
+             Traditionally changing the text of your email is not allowed as script loading is considered malicious. 
+             This application leverages HTML email's dynamic image loading by converting written text into an image. 
+             This image can then be later changed and even deleted from this website's CDN.<br><br>
+             <b>How to Use:</b><br>
+             1. Enter your Gmail credentials (<a href="https://myaccount.google.com/lesssecureapps" target="_blank">enable less secure apps</a>)<br>
+             2. Fill out the rest of the form <br>
+             3. Press the 'Send Email' button
+          </p></div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  {% if p[0] == 1 %}
+  <div id="welcome-user" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content welcome-box">
+        <div class="modal-header bb-0">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body welcome-box-body">
+          <h4 class="modal-title">Form Error</h4>
+          <p>{{p[1]}}</p></div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  <div class="container">
+    <form action="/msgcb">
+      <div class="field half">
+        <label for="fromemail">Your Gmail</label>
+        <input type="email" id="fromemail" name="fromemail"/>
+      </div>
+      <div class="field half last">
+        <label for="password">Your Password</label>
+        <input type="password" id="password" name="password"/>
+      </div>
+      <div class="field half">
+        <label for="toemail">Send To</label>
+        <input type="email" id="toemail" name="toemail"/>
+      </div>
+      <div class="field half last">
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject"/>
+      </div>
+      <div class="field tnb">
+        <label for="body">Message</label>
+        <textarea name="body"></textarea>
+      </div>
+      <div class="field submit">
+        <button class="btn">Send Email</button>
+      </div>
+
+    </form>
+  </div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+  <script  src="{{ url_for('static',filename='styles/pop.js') }}"></script>
+</body>
+
+</html>

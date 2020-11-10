@@ -1,0 +1,129 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700);
+/* VARS */
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  background-color: #121212;
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.container {
+  max-width: 700px;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.btn {
+  border: 0;
+  background-color: transparent;
+  padding: 18px 30px;
+  font-size: 14px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: .0875em;
+  font-weight: 500;
+  color: #ffffff;
+  opacity: 87%;
+  font-family: 'Source Sans Pro', sans-serif;
+  outline: 0;
+  width: 100%;
+  transition: background-color 300ms cubic-bezier(0.215, 0.61, 0.355, 1), color 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.btn2 {
+  border: 0;
+  background-color: transparent;
+  padding: 18px 30px;
+  font-size: 14px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: .0875em;
+  font-weight: 500;
+  color: #ffffff;
+  opacity: 87%;
+  font-family: 'Source Sans Pro', sans-serif;
+  outline: 0;
+  width: 100%;
+  transition: background-color 300ms cubic-bezier(0.215, 0.61, 0.355, 1), color 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+
+form {
+  margin: 2rem 0;
+}
+
+
+form .submit {
+  width: 100%;
+  border-top: 0;
+}
+
+.btn:hover {
+  background-color: #fed8b1;
+}
+
+.btn2:hover {
+  background-color: #ffcccb;
+}
+
+form:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+form .field {
+  display: block;
+  border: 1px solid #BDBDBD;
+  float: left;
+  width: 100%;
+}
+form .field.tnb {
+  border-top: 0;
+}
+form .field.half {
+  width: 50%;
+}
+form .field.last {
+  border-left: 0;
+}
+form .field label {
+  display: block;
+  font-size: 1.2rem;
+  padding: 1.5rem 2rem 0;
+  text-transform: uppercase;
+  color: #999;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+form .field input,
+form .field textarea {
+  display: block;
+  width: 100%;
+  padding: .5rem 2rem 1.5rem;
+  font-size: 1.8rem;
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color:rgba(0, 0, 0, 0);
+  color:white;
+  opacity: 87%;
+  border: none;
+  outline:none;
+}
+form .field textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.welcome-box{border-radius:0;}
+.bb-0{border-bottom: 0px transparent;}
+.welcome-box-body{padding: 15px 85px 105px;width: 100%;}
+.welcome-box-body .modal-title {font-size: 36px;color: #3B444E;letter-spacing: 0;line-height: 40px;margin-bottom: 20px;}
+.welcome-box-body p {font-size: 18px;color: #3B444E;line-height: 25px;}
